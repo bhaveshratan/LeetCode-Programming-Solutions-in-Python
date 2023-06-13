@@ -33,10 +33,30 @@ Constraints:
 
 Follow up: Could you solve it without converting the integer to a string?
 '''
-
+# Method 1
 class Solution:
     def isPalindrome(self, x: int) -> bool:
 
 
         s = str(x)
         return True if s == s[::-1] else False
+    
+    
+# Method 2
+
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if(x<0):
+                return False
+        else:
+            c = x
+            rev = 0
+            rem = 0
+            while (x!=0):
+                rem  = x % 10
+                rev = rev * 10 + rem
+                x = x//10
+        if c==rev:
+            return True
+        else:
+            return False
